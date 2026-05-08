@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do Zero ao Primeiro Investimento</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-900: #0a2518;
+    --green-800: #103520;
+    --green-700: #1a5c35;
+    --green-600: #1f7a42;
+    --green-500: #27a255;
+    --green-400: #3dc26d;
+    --green-100: #d6f5e3;
+    --green-50:  #edfaf3;
+    --gold-600:  #b8860b;
+    --gold-400:  #d4a017;
+    --gold-100:  #fef3cd;
+    --red-600:   #b91c1c;
+    --red-50:    #fef2f2;
+    --gray-900:  #111827;
+    --gray-700:  #374151;
+    --gray-500:  #6b7280;
+    --gray-300:  #d1d5db;
+    --gray-100:  #f3f4f6;
+    --white:     #ffffff;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans:  'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gray-700);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ──────────────────────────────────────────── */
+  .hero {
+    background: var(--green-900);
+    background-image:
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(39,162,85,0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 80% at 10% 80%, rgba(212,160,23,0.08) 0%, transparent 60%);
+    padding: 72px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 420px; height: 420px;
+    border: 1px solid rgba(39,162,85,0.12);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -60px;
+    width: 320px; height: 320px;
+    border: 1px solid rgba(212,160,23,0.1);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(39,162,85,0.2);
+    border: 1px solid rgba(39,162,85,0.4);
+    color: var(--green-400);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--green-400);
+  }
+
+  .hero p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-top: 48px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-stat {
+    flex: 1;
+    padding: 16px 12px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-400);
+    font-family: var(--serif);
+  }
+  .hero-stat span {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── CONTAINER ──────────────────────────────────────── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── SECTION LABEL ──────────────────────────────────── */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green-600);
+    margin-bottom: 16px;
+  }
+  .section-label::before,
+  .section-label::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--green-500);
+  }
+
+  /* ── PAIN SECTION ───────────────────────────────────── */
+  .pain-section {
+    padding: 72px 24px;
+    background: var(--gray-100);
+  }
+  .pain-section h2 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 32px;
+    max-width: 560px;
+  }
+  .pain-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .pain-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-left: 3px solid var(--red-600);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: var(--gray-700);
+    font-style: italic;
+  }
+  .pain-item::before {
+    content: '"';
+    font-size: 28px;
+    font-family: var(--serif);
+    color: var(--red-600);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+  .pain-resolution {
+    background: var(--green-900);
+    color: var(--white);
+    padding: 24px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .pain-resolution strong { color: var(--green-400); }
+
+  /* ── PRODUCT INTRO ──────────────────────────────────── */
+  .product-section {
+    padding: 72px 24px;
+    background: var(--white);
+    text-align: center;
+  }
+  .product-name {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    color: var(--green-800);
+    margin: 16px 0 12px;
+    line-height: 1.15;
+  }
+  .product-tagline {
+    font-size: 17px;
+    color: var(--gray-500);
+    max-width: 500px;
+    margin: 0 auto 40px;
+  }
+  .product-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .product-feature {
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    color: var(--green-700);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 100px;
+  }
+
+  /* ── BENEFITS ───────────────────────────────────────── */
+  .benefits-section {
+    padding: 72px 24px;
+    background: var(--green-900);
+    background-image: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(39,162,85,0.1) 0%, transparent 70%);
+  }
+  .benefits-section .section-label { color: var(--green-400); }
+  .benefits-section .section-label::before,
+  .benefits-section .section-label::after { background: var(--green-500); }
+  .benefits-section h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 40px;
+    line-height: 1.25;
+  }
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media(max-width:600px){ .benefit-grid { grid-template-columns: 1fr; } }
+  .benefit-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .benefit-card:hover { border-color: rgba(39,162,85,0.4); }
+  .benefit-icon {
+    width: 36px; height: 36px;
+    background: rgba(39,162,85,0.15);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  .benefit-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .benefit-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  /* ── CONTENTS ───────────────────────────────────────── */
+  .contents-section {
+    padding: 72px 24px;
+    background: var(--white);
+  }
+  .contents-section h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 40px;
+  }
+  .chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--gray-300);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .chapter-item {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--gray-300);
+  }
+  .chapter-item:last-child { border-bottom: none; }
+  .chapter-num {
+    background: var(--green-800);
+    color: var(--green-400);
+    font-family: var(--serif);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 20px 18px;
+    min-width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .chapter-content {
+    padding: 18px 20px;
+    flex: 1;
+  }
+  .chapter-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+  }
+  .chapter-content p {
+    font-size: 13px;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+  .chapter-tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .tag-green { background: var(--green-50); color: var(--green-700); border: 1px solid var(--green-100); }
+  .tag-gold  { background: var(--gold-100); color: var(--gold-600); border: 1px solid #f0dca0; }
+
+  .bonus-bar {
+    margin-top: 16px;
+    background: linear-gradient(135deg, var(--gold-100) 0%, #fefae8 100%);
+    border: 1px solid #e8cc80;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .bonus-badge {
+    background: var(--gold-400);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+  }
+  .bonus-bar p {
+    font-size: 13px;
+    color: var(--gold-600);
+    font-weight: 500;
+  }
+
+  /* ── FOR WHO ────────────────────────────────────────── */
+  .forwho-section {
+    padding: 72px 24px;
+    background: var(--gray-100);
+  }
+  .forwho-section h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 32px;
+  }
+  .forwho-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media(max-width:600px){ .forwho-grid { grid-template-columns: 1fr; } }
+  .forwho-col h3 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+  }
+  .forwho-col.yes h3 { color: var(--green-600); border-color: var(--green-500); }
+  .forwho-col.no  h3 { color: var(--red-600); border-color: var(--red-600); }
+  .forwho-list { display: flex; flex-direction: column; gap: 10px; }
+  .forwho-item {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--gray-700);
+    align-items: flex-start;
+  }
+  .forwho-item .icon {
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .yes .icon { color: var(--green-600); }
+  .no  .icon { color: var(--red-600); }
+
+  /* ── TESTIMONIALS ───────────────────────────────────── */
+  .testimonials-section {
+    padding: 72px 24px;
+    background: var(--white);
+  }
+  .testimonials-section h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 40px;
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media(max-width:600px){ .testimonial-grid { grid-template-columns: 1fr; } }
+  .testimonial-card {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 60px;
+    color: var(--green-100);
+    position: absolute;
+    top: 8px; left: 16px;
+    line-height: 1;
+  }
+  .stars {
+    color: var(--gold-400);
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .testimonial-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .testimonial-author {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-500);
+  }
+  .testimonial-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray-500);
+    font-style: italic;
+    margin-top: 20px;
+    padding: 12px;
+    border: 1px dashed var(--gray-300);
+    border-radius: 8px;
+  }
+
+  /* ── PRICE ──────────────────────────────────────────── */
+  .price-section {
+    padding: 72px 24px;
+    background: var(--green-900);
+    background-image: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(39,162,85,0.12) 0%, transparent 70%);
+    text-align: center;
+  }
+  .price-section .section-label { color: var(--green-400); }
+  .price-section .section-label::before,
+  .price-section .section-label::after { background: var(--green-500); }
+  .price-section h2 {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+
+  .price-card {
+    background: var(--white);
+    border-radius: 20px;
+    max-width: 440px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 32px 64px rgba(0,0,0,0.3);
+  }
+  .price-card-header {
+    background: var(--green-800);
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .price-card-header p {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green-400);
+  }
+  .price-card-body {
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .price-from {
+    font-size: 13px;
+    color: var(--gray-500);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+  .price-main {
+    font-family: var(--serif);
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--green-700);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-main sup { font-size: 28px; vertical-align: super; }
+  .price-installment {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-bottom: 28px;
+  }
+  .price-includes {
+    text-align: left;
+    margin-bottom: 28px;
+  }
+  .price-include-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--gray-700);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .price-include-item:last-child { border-bottom: none; }
+  .price-include-item .check-icon {
+    width: 20px; height: 20px;
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    color: var(--green-600);
+    flex-shrink: 0;
+  }
+
+  .cta-button {
+    display: block;
+    background: var(--green-600);
+    color: var(--white);
+    text-align: center;
+    padding: 18px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+    margin-bottom: 12px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+  }
+  .cta-button:hover { background: var(--green-500); transform: translateY(-1px); }
+  .cta-button:active { transform: translateY(0); }
+
+  .cta-sub {
+    font-size: 12px;
+    color: var(--gray-500);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .cta-sub span { display: flex; align-items: center; gap: 4px; }
+
+  .guarantee-bar {
+    margin-top: 24px;
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .guarantee-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .guarantee-text h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green-800);
+    margin-bottom: 4px;
+  }
+  .guarantee-text p {
+    font-size: 13px;
+    color: var(--green-700);
+    line-height: 1.6;
+  }
+
+  /* ── FAQ ────────────────────────────────────────────── */
+  .faq-section {
+    padding: 72px 24px;
+    background: var(--gray-100);
+  }
+  .faq-section h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 40px;
+  }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item {
+    border-bottom: 1px solid var(--gray-300);
+    padding: 20px 0;
+  }
+  .faq-item:first-child { border-top: 1px solid var(--gray-300); }
+  .faq-q {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .faq-q::before {
+    content: 'P';
+    background: var(--green-800);
+    color: var(--green-400);
+    font-size: 11px;
+    font-weight: 700;
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .faq-a {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.7;
+    padding-left: 34px;
+  }
+
+  /* ── FINAL CTA ──────────────────────────────────────── */
+  .final-cta {
+    padding: 72px 24px;
+    background: var(--white);
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-family: var(--serif);
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+  .final-cta p {
+    font-size: 16px;
+    color: var(--gray-500);
+    margin-bottom: 36px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .final-cta-btn {
+    display: inline-block;
+    background: var(--green-600);
+    color: var(--white);
+    padding: 18px 48px;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .final-cta-btn:hover { background: var(--green-500); transform: translateY(-2px); }
+  .final-price-note {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--gray-500);
+  }
+  .final-price-note strong { color: var(--green-600); font-size: 20px; }
+
+  /* ── FOOTER ─────────────────────────────────────────── */
+  footer {
+    background: var(--green-900);
+    padding: 28px 24px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+  /* ── DIVIDER ────────────────────────────────────────── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gray-300), transparent);
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">E-book · Finanças Pessoais · Para Iniciantes</div>
+    <h1>Você Sabe que Deveria<br>Estar <em>Investindo.</em></h1>
+    <p>Mas ninguém nunca te ensinou como — sem economês, sem valor mínimo alto, sem precisar confiar cegamente no gerente do banco.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>52</strong><span>páginas</span></div>
+      <div class="hero-stat"><strong>8</strong><span>capítulos</span></div>
+      <div class="hero-stat"><strong>R$ 30</strong><span>para começar</span></div>
+      <div class="hero-stat"><strong>7 dias</strong><span>de garantia</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="pain-section">
+  <div class="container">
+    <div class="section-label">Isso soa familiar?</div>
+    <h2>Se você já pensou alguma dessas coisas, este guia foi feito para você.</h2>
+    <div class="pain-list">
+      <div class="pain-item">Tenho dinheiro na poupança mas sinto que deveria estar fazendo algo diferente com ele...</div>
+      <div class="pain-item">Já tentei entender sobre Tesouro Direto e desisti no meio das siglas e do economês...</div>
+      <div class="pain-item">Preciso ter muito dinheiro guardado para começar a investir de verdade...</div>
+      <div class="pain-item">Tenho medo de perder o pouco que tenho. Prefiro não arriscar e ficar no seguro...</div>
+      <div class="pain-item">Sei que a inflação corrói meu dinheiro, mas não sei o que fazer diferente...</div>
+    </div>
+    <div class="pain-resolution">
+      <strong>O problema não é você.</strong> É que o sistema financeiro se beneficia da sua confusão. Quando você fica na poupança, quando tem medo de investir, quando não sabe comparar produtos — alguém está lucrando com isso. Isso muda agora.
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PRODUTO -->
+<section class="product-section">
+  <div class="container">
+    <div class="section-label">O guia</div>
+    <div class="product-name">Do Zero ao<br>Primeiro Investimento</div>
+    <p class="product-tagline">Para quem ganha pouco, tem medo de errar e quer finalmente colocar o dinheiro para trabalhar.</p>
+    <div class="product-features">
+      <span class="product-feature">📄 52 páginas</span>
+      <span class="product-feature">📚 8 capítulos + bônus</span>
+      <span class="product-feature">🧮 Calculadoras inclusas</span>
+      <span class="product-feature">✅ Plano de ação de 30 dias</span>
+      <span class="product-feature">📲 PDF para qualquer dispositivo</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BENEFÍCIOS -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="section-label">O que você vai conseguir</div>
+    <h2>Ao terminar este guia, você vai ser capaz de:</h2>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🏦</div>
+        <h3>Saber onde colocar seu dinheiro com segurança real</h3>
+        <p>Sem depender do gerente do banco ou de influenciadores da internet.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📊</div>
+        <h3>Distinguir Tesouro, CDB, LCI, LCA e poupança</h3>
+        <p>E escolher o produto certo para cada objetivo específico seu.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <h3>Calcular quanto investir por mês na sua realidade</h3>
+        <p>Com base na sua renda real — não em fórmulas que ignoram sua vida.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌱</div>
+        <h3>Começar com o que você tem — mesmo R$ 30</h3>
+        <p>E ver esse hábito transformar sua vida financeira nos próximos anos.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🛡️</div>
+        <h3>Proteger seu dinheiro da inflação de forma inteligente</h3>
+        <p>Poupança te faz perder dinheiro. Você vai entender exatamente por quê.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🗺️</div>
+        <h3>Ter um plano de ação claro para os próximos 30 dias</h3>
+        <p>Sem ambiguidade. Sem desculpa para adiar mais um mês.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTEÚDO -->
+<section class="contents-section">
+  <div class="container">
+    <div class="section-label">Conteúdo</div>
+    <h2>O que está dentro do guia</h2>
+    <div class="chapter-list">
+      <div class="chapter-item">
+        <div class="chapter-num">01</div>
+        <div class="chapter-content">
+          <h4>Por Que Você Ainda Não Investe</h4>
+          <p>As 5 barreiras reais, o custo matemático de esperar e como o mercado lucra com sua confusão.</p>
+          <div class="chapter-tags"><span class="tag tag-green">Mentalidade</span></div>
+        </div>
+      </div>
+      <div class="chapter-item">
+        <div class="chapter-num">02</div>
+        <div class="chapter-content">
+          <h4>Organize as Finanças Antes de Investir</h4>
+          <p>A ordem correta que a maioria pula. Orçamento real, calculadora de sobra mensal inclusa.</p>
+          <div class="chapter-tags"><span class="tag tag-green">Organização</span><span class="tag tag-gold">Calculadora</span></div>
+        </div>
+      </div>
+      <div class="chapter-item">
+        <div class="chapter-num">03</div>
+        <div class="chapter-content">
+          <h4>Risco, Retorno e Tempo</h4>
+          <p>Os 3 conceitos que governam qualquer investimento. Perfis de investidor e por onde começar.</p>
+          <div class="chapter-tags"><span class="tag tag-green">Fundamentos</span></div>
+        </div>
+      </div>
+      <div class="chapter-item">
+        <div class="chapter-num">04</div>
+        <div class="chapter-content">
+          <h4>A Poupança Está Te Roubando</h4>
+          <p>Quanto você perde todo mês com comparação real: poupança vs Tesouro em 5, 10 e 20 anos.</p>
+          <div class="chapter-tags"><span class="tag tag-gold">Números reais</span></div>
+        </div>
+      </div>
+      <div class="chapter-item">
+        <div class="chapter-num">05</div>
+        <div class="chapter-content">
+          <h4>Tesouro Direto: Seu Primeiro Investimento</h4>
+          <p>Os 3 títulos essenciais, passo a passo para comprar, tributação explicada de forma simples.</p>
+          <div class="chapter-tags"><span class="tag tag-green">Prático</span><span class="tag tag-green">Passo a passo</span></div>
+        </div>
+      </div>
+      <div class="chapter-item">
+        <div class="chapter-num">06</div>
+        <div class="chapter-content">
+          <h4>CDB, LCI e LCA: As Alternativas ao Tesouro</h4>
+          <p>FGC, garantias, fórmula de comparação com/sem IR e onde encontrar os melhores títulos.</p>
+          <div class="chapter-tags"><span class="tag tag-green">Renda fixa</span><span class="tag tag-gold">Fórmula inclusa</span></div>
+        </div>
+      </div>
+      <div class="chapter-item">
+        <div class="chapter-num">07</div>
+        <div class="chapter-content">
+          <h4>Quanto e Quando Investir</h4>
+          <p>Simulador de crescimento por aporte mensal. A regra do pagamento a si mesmo primeiro.</p>
+          <div class="chapter-tags"><span class="tag tag-gold">Simulador</span><span class="tag tag-green">Plano de ação</span></div>
+        </div>
+      </div>
+      <div class="chapter-item">
+        <div class="chapter-num">08</div>
+        <div class="chapter-content">
+          <h4>Os 5 Erros que Iniciantes Cometem</h4>
+          <p>Como não perder dinheiro nas primeiras decisões — e o que fazer se já cometeu algum.</p>
+          <div class="chapter-tags"><span class="tag tag-green">Prevenção</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bonus-bar">
+      <span class="bonus-badge">BÔNUS</span>
+      <p>20 perguntas frequentes respondidas · Mapa de próximos passos · Ferramentas essenciais · Checklist final de implementação</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PARA QUEM É -->
+<section class="forwho-section">
+  <div class="container">
+    <div class="section-label">Público</div>
+    <h2>Para quem é — e para quem não é</h2>
+    <div class="forwho-grid">
+      <div class="forwho-col yes">
+        <h3>✓ &nbsp;Este guia É para você</h3>
+        <div class="forwho-list">
+          <div class="forwho-item"><span class="icon">✓</span>Nunca investiu e não sabe por onde começar</div>
+          <div class="forwho-item"><span class="icon">✓</span>Tem medo de perder o dinheiro que tem</div>
+          <div class="forwho-item"><span class="icon">✓</span>Acha que precisa de muito dinheiro para começar</div>
+          <div class="forwho-item"><span class="icon">✓</span>Tem dinheiro parado na poupança sem saber o que fazer</div>
+          <div class="forwho-item"><span class="icon">✓</span>Quer parar de depender só do salário no futuro</div>
+        </div>
+      </div>
+      <div class="forwho-col no">
+        <h3>✗ &nbsp;Não é para você se</h3>
+        <div class="forwho-list">
+          <div class="forwho-item"><span class="icon">✗</span>Você já investe regularmente e busca estratégias avançadas</div>
+          <div class="forwho-item"><span class="icon">✗</span>Você já conhece CDI, Selic e FGC e como usá-los</div>
+          <div class="forwho-item"><span class="icon">✗</span>Você busca dicas de ações ou renda variável</div>
+          <div class="forwho-item"><span class="icon">✗</span>Você espera enricar rapidamente sem esforço</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- DEPOIMENTOS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-label">Depoimentos</div>
+    <h2>O que os leitores dizem</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Comecei investindo R$ 50 por mês. Parecia ridículo. Dois anos depois, tenho R$ 8.400 acumulados e uma reserva de emergência completa. O guia me deu o primeiro passo que eu nunca conseguia dar.</p>
+        <div class="testimonial-author">Amanda S., 27 anos — analista administrativa</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Perdi anos deixando dinheiro na poupança. Em uma tarde de leitura entendi mais sobre investimentos do que em toda a minha vida anterior. Na semana seguinte já tinha feito minha primeira compra de Tesouro Selic.</p>
+        <div class="testimonial-author">Ricardo T., 38 anos — técnico de TI</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Tinha muito medo de perder dinheiro e ficava travado. O capítulo sobre o FGC me deu a segurança que precisava para agir. Hoje invisto R$ 300 todo mês de forma automática.</p>
+        <div class="testimonial-author">Carla M., 44 anos — professora</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">O melhor investimento que fiz esse ano foi esse guia. Não é exagero. O que aprendi aqui gerou muito mais do que os R$ 37 que paguei.</p>
+        <div class="testimonial-author">Fernando L., 31 anos — autônomo</div>
+      </div>
+    </div>
+    <p class="testimonial-note">⚠️ Substitua estes depoimentos pelos seus reais conforme forem chegando. Depoimentos autênticos convertem muito mais.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PREÇO -->
+<section class="price-section">
+  <div class="container">
+    <div class="section-label">Investimento</div>
+    <h2>Acesse agora por um valor<br>menor que um delivery</h2>
+    <div class="price-card">
+      <div class="price-card-header">
+        <p>Do Zero ao Primeiro Investimento — E-book Completo</p>
+      </div>
+      <div class="price-card-body">
+        <p class="price-from">De R$ 97,00</p>
+        <div class="price-main"><sup>R$</sup>37</div>
+        <p class="price-installment">ou 3x de R$ 13,50 sem juros</p>
+        <div class="price-includes">
+          <div class="price-include-item"><span class="check-icon">✓</span>E-book completo — 52 páginas em PDF</div>
+          <div class="price-include-item"><span class="check-icon">✓</span>8 capítulos + bônus exclusivos</div>
+          <div class="price-include-item"><span class="check-icon">✓</span>Calculadoras e simuladores</div>
+          <div class="price-include-item"><span class="check-icon">✓</span>Plano de ação de 30 dias</div>
+          <div class="price-include-item"><span class="check-icon">✓</span>Acesso imediato após pagamento</div>
+          <div class="price-include-item"><span class="check-icon">✓</span>Funciona offline em qualquer dispositivo</div>
+        </div>
+        <button class="cta-button">QUERO COMEÇAR A INVESTIR AGORA →</button>
+        <div class="cta-sub">
+          <span>🔒 Pagamento 100% seguro</span>
+          <span>⚡ Acesso imediato</span>
+          <span>📧 Enviado por e-mail</span>
+        </div>
+        <div class="guarantee-bar">
+          <div class="guarantee-icon">🛡️</div>
+          <div class="guarantee-text">
+            <h4>Garantia incondicional de 7 dias</h4>
+            <p>Se em 7 dias você não ficar 100% satisfeito, devolvemos cada centavo. Sem perguntas, sem burocracia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-label">Dúvidas</div>
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Em quanto tempo recebo o acesso?</div>
+        <p class="faq-a">Imediatamente após a confirmação do pagamento. Você recebe o link de download por e-mail em menos de 5 minutos.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Funciona para quem tem muito pouco dinheiro disponível?</div>
+        <p class="faq-a">Sim — é exatamente para isso que o guia foi feito. O conteúdo parte do pressuposto que você pode ter apenas R$ 30 por mês para investir. Não existe valor mínimo de renda para começar.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Preciso já ter conta em corretora?</div>
+        <p class="faq-a">Não. O guia ensina como abrir uma conta gratuita em corretora, em quais plataformas e o passo a passo completo para fazer sua primeira compra.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E se eu não gostar?</div>
+        <p class="faq-a">Você tem 7 dias de garantia incondicional. Se por qualquer motivo o guia não atender às suas expectativas, devolvemos 100% do valor pago. Sem perguntas, sem burocracia.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Já tentei aprender sobre investimentos antes e desisti. Por que seria diferente?</div>
+        <p class="faq-a">Porque a maioria do conteúdo sobre investimentos é feita por quem já investia há anos e esqueceu como é não saber nada. Este guia foi escrito especificamente para quem nunca investiu, em português real, sem presumir conhecimento prévio.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Qual o formato do produto?</div>
+        <p class="faq-a">PDF — você recebe um arquivo que pode ler no celular, tablet ou computador. Funciona offline, sem necessidade de internet após o download.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="section-label">Última chance</div>
+    <h2>Cada mês sem investir é um mês de juros compostos perdido para sempre.</h2>
+    <p>O melhor momento para começar foi há dez anos. O segundo melhor momento é hoje.</p>
+    <button class="final-cta-btn">QUERO COMEÇAR AGORA →</button>
+    <p class="final-price-note">Por apenas <strong>R$ 37</strong> — menos que um jantar fora</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024 Do Zero ao Primeiro Investimento · Todos os direitos reservados</p>
+  <p style="margin-top:8px"><a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a> · <a href="#">Suporte</a></p>
+</footer>
+
+</body>
+</html>
